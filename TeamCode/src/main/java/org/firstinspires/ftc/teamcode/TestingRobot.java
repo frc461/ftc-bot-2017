@@ -32,14 +32,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.robot.Robot;
-import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
@@ -116,7 +111,7 @@ public class TestingRobot extends OpMode{
         robot.RDrive1.setPower(p);
     }
 
-    //Control Shooter in one blow
+    //Control Shooter_old in one blow
     public void Shooter(double p){
         robot.Shooter1.setPower(p);
         //robot.Shooter2.setPower(p);
@@ -150,6 +145,7 @@ public class TestingRobot extends OpMode{
         intake = gamepad2.left_stick_y;
         shooter = gamepad2.right_stick_y;
 
+
         //Moving Controls
         if(gamepad1.right_trigger > 0){ //If you hit the right trigger then it should move forward
             LDrive(gamepad1.right_trigger);
@@ -175,7 +171,7 @@ public class TestingRobot extends OpMode{
             robot.RDrive2.setDirection(DcMotor.Direction.FORWARD);
         }
 
-        //Shooter Control
+        //Shooter_old Control
         if(gamepad2.b){
             Shooter(1);
         } else{
@@ -187,7 +183,7 @@ public class TestingRobot extends OpMode{
 
         if (gamepad2.b) {
             shooter_diff = robot.Shooter1.getCurrentPosition() - last_shooter_reading;
-            telemetry.addData("Shooter Difference", shooter_diff);
+            telemetry.addData("Shooter_old Difference", shooter_diff);
             if(shooter_diff > -20){
                 robot.Intake.setPower(-1);
                 intakeStatus = "intaking, and shooting";
@@ -263,8 +259,8 @@ public class TestingRobot extends OpMode{
         }
 
         telemetry.addData("Intake State", intakeStatus);
-        telemetry.addData("Shooter Status", shooterStatus);
-        telemetry.addData("Shooter Speed", robot.Shooter1.getPower());
+        telemetry.addData("Shooter_old Status", shooterStatus);
+        telemetry.addData("Shooter_old Speed", robot.Shooter1.getPower());
         telemetry.addData("Drive Position", robot.LDrive1.getCurrentPosition() - startPosition);
         telemetry.addData("L Servo 1", robot.LServo1.getPosition());
         telemetry.addData("L Server 2", robot.LServo2.getPosition());

@@ -35,16 +35,14 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
-@Autonomous(name="Posty Thingy Blue")
+@Autonomous(name="Shooter_old")
 //@Disabled
 
 
-
-public class ToPostyThingyBlue extends LinearOpMode {
+public class Shooter_old extends LinearOpMode {
 
     private ElapsedTime runtime = new ElapsedTime();
     DcMotor RDrive1;
@@ -131,8 +129,6 @@ public class ToPostyThingyBlue extends LinearOpMode {
         Intake.setPower(0);
         action = "Turn off Intake and shooter";
         Shooter(0);
-        moveBetter(0.5, 1930);
-        action = "Knock off ball";
 
 
         while (opModeIsActive() && (runtime.seconds() < 15.0)) {

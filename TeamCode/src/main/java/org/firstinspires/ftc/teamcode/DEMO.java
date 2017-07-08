@@ -111,7 +111,7 @@ public class DEMO extends OpMode{
         robot.RDrive1.setPower(p * 0.8);
     }
 
-    //Control Shooter in one blow
+    //Control Shooter_old in one blow
     public void Shooter(double p){
         robot.Shooter1.setPower(p);
         //robot.Shooter2.setPower(p);
@@ -170,7 +170,7 @@ public class DEMO extends OpMode{
             robot.RDrive2.setDirection(DcMotor.Direction.FORWARD);
         }
 
-        //Shooter Control
+        //Shooter_old Control
         if(gamepad1.x) {
             Shooter(1.0);
             shooterStatus = "???";
@@ -193,8 +193,8 @@ public class DEMO extends OpMode{
 
 
         telemetry.addData("Intake State", intakeStatus);
-        telemetry.addData("Shooter Status", shooterStatus);
-        telemetry.addData("Shooter Speed", robot.Shooter1.getPower());
+        telemetry.addData("Shooter_old Status", shooterStatus);
+        telemetry.addData("Shooter_old Speed", robot.Shooter1.getPower());
         telemetry.addData("Drive Position", robot.LDrive1.getCurrentPosition() - startPosition);
         telemetry.addData("L Servo 1", robot.LServo1.getPosition());
         telemetry.addData("L Server 2", robot.LServo2.getPosition());

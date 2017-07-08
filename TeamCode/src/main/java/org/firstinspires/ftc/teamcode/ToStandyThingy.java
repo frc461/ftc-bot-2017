@@ -97,8 +97,8 @@ public class ToStandyThingy extends LinearOpMode {
         RDrive2 = hardwareMap.dcMotor.get("R Drive 2");
         LDrive1 = hardwareMap.dcMotor.get("L Drive 1");
         LDrive2 = hardwareMap.dcMotor.get("L Drive 2");
-        Shooter1 = hardwareMap.dcMotor.get("Shooter 2");
-        //Shooter2 = hardwareMap.dcMotor.get("Shooter 2");
+        Shooter1 = hardwareMap.dcMotor.get("Shooter_old 2");
+        //Shooter2 = hardwareMap.dcMotor.get("Shooter_old 2");
         Intake = hardwareMap.dcMotor.get("Intake");
 
         LDrive1.setDirection(DcMotor.Direction.REVERSE);
